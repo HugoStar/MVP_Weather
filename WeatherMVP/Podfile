@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WeatherMVP' do
+  use_frameworks!
+
+	# Save Data
+	pod 'RealmSwift'
+
+	# Networking
+	pod 'Alamofire'
+
+	# Parsing
+	pod "Unbox"
+
+
+  target 'WeatherMVPTests' do
+    inherit! :search_paths
+
+  end
+
+end
