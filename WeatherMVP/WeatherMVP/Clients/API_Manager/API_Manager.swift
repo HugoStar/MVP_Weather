@@ -17,14 +17,14 @@ enum NETError: Error {
 }
 
 
-class API_Manager {
+struct API_Manager {
   
   private let api_key = "0f49f454b8ae2376d58805cc4e9d5a10"
   private let mainURL = "http://api.openweathermap.org/data/2.5/weather"
   
   let netClient: NetClientType
   
-  required init(with netClient: NetClientType) {
+  init(with netClient: NetClientType) {
     self.netClient = netClient
   }
   
@@ -45,7 +45,7 @@ protocol NetClientType {
   func getDataWithURL(_ url: String, response: @escaping NETResponce)
 }
 
-class NetClient: NetClientType {
+struct NetClient: NetClientType {
   
   func getDataWithURL(_ url: String, response: @escaping NETResponce) {
     guard let url = URL(string: url) else {

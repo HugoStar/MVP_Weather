@@ -23,7 +23,7 @@ class DataManagerTests: XCTestCase {
   }
   override func tearDown() {}
   
-  func test_addElementToDataBase() {
+  func test_AddElementToDataBase() {
     let city = City()
     dataManager.addCity(city)
     let cities = dataManager.loadCities()
@@ -50,7 +50,7 @@ class DataManagerTests: XCTestCase {
     XCTAssertEqual(cities.count, 1)
   }
   
-  func test_updateElementFromDataBase() {
+  func test_UpdateElementFromDataBase() {
     let city1 = City()
     let city2 = City()
     

@@ -19,7 +19,7 @@ protocol DataManagerType {
 }
 
 
-class DataManager: DataManagerType {
+struct DataManager: DataManagerType {
   
   private let realm = RealmProvider.realm()
   

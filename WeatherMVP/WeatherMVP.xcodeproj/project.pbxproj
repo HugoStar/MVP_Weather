@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D095272E8BFB1E494243CBD /* Pods_WeatherMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D992546F96A92F8F68841202 /* Pods_WeatherMVP.framework */; };
 		5DE596041A392CFA443BF023 /* Pods_WeatherMVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74233F7C432F2858B377693 /* Pods_WeatherMVPTests.framework */; };
+		9ADF5BDC21A6E7F500D621E2 /* MainPresentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BDB21A6E7F500D621E2 /* MainPresentorTests.swift */; };
+		9ADF5BDF21A6ECEA00D621E2 /* MainPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BDE21A6ECEA00D621E2 /* MainPresentor.swift */; };
+		9ADF5BE221A6EE2F00D621E2 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BE121A6EE2F00D621E2 /* Closures.swift */; };
+		9ADF5BE721A6EEA000D621E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BE621A6EEA000D621E2 /* MainViewController.swift */; };
+		9ADF5BE921A6FA5400D621E2 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BE821A6FA5400D621E2 /* MainViewControllerTests.swift */; };
 		9AE9768621A6A2CF003B7E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9768521A6A2CF003B7E93 /* AppDelegate.swift */; };
 		9AE9768B21A6A2CF003B7E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE9768921A6A2CF003B7E93 /* Main.storyboard */; };
 		9AE9768D21A6A2D0003B7E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE9768C21A6A2D0003B7E93 /* Assets.xcassets */; };
@@ -37,6 +42,11 @@
 		13D5E9244825837DC71D8D65 /* Pods-WeatherMVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVPTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMVPTests/Pods-WeatherMVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		20E9420975751DAABD4E9B1E /* Pods-WeatherMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVP.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMVP/Pods-WeatherMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		3EFF09DDD96F4524585F786F /* Pods-WeatherMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVP.release.xcconfig"; path = "Target Support Files/Pods-WeatherMVP/Pods-WeatherMVP.release.xcconfig"; sourceTree = "<group>"; };
+		9ADF5BDB21A6E7F500D621E2 /* MainPresentorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentorTests.swift; sourceTree = "<group>"; };
+		9ADF5BDE21A6ECEA00D621E2 /* MainPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentor.swift; sourceTree = "<group>"; };
+		9ADF5BE121A6EE2F00D621E2 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		9ADF5BE621A6EEA000D621E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9ADF5BE821A6FA5400D621E2 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		9AE9768221A6A2CF003B7E93 /* WeatherMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE9768521A6A2CF003B7E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE9768A21A6A2CF003B7E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +109,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9ADF5BD921A6E7D800D621E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF5BDA21A6E7E400D621E2 /* Main */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9ADF5BDA21A6E7E400D621E2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF5BDB21A6E7F500D621E2 /* MainPresentorTests.swift */,
+				9ADF5BE821A6FA5400D621E2 /* MainViewControllerTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9ADF5BDD21A6ECD800D621E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF5BE321A6EE8100D621E2 /* Main */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9ADF5BE021A6EE0800D621E2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF5BE121A6EE2F00D621E2 /* Closures.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		9ADF5BE321A6EE8100D621E2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF5BDE21A6ECEA00D621E2 /* MainPresentor.swift */,
+				9ADF5BE621A6EEA000D621E2 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		9AE9767921A6A2CF003B7E93 = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +174,10 @@
 		9AE9768421A6A2CF003B7E93 /* WeatherMVP */ = {
 			isa = PBXGroup;
 			children = (
+				9ADF5BDD21A6ECD800D621E2 /* Controllers */,
 				9AE976B621A6B124003B7E93 /* Clients */,
 				9AE976AA21A6A520003B7E93 /* Model */,
+				9ADF5BE021A6EE0800D621E2 /* Constants */,
 				9AE976A521A6A2E7003B7E93 /* Resources */,
 				9AE976A621A6A2F8003B7E93 /* SystemFiles */,
 			);
@@ -133,6 +187,7 @@
 		9AE9769921A6A2D0003B7E93 /* WeatherMVPTests */ = {
 			isa = PBXGroup;
 			children = (
+				9ADF5BD921A6E7D800D621E2 /* Controllers */,
 				9AE976B221A6AE6E003B7E93 /* Clients */,
 				9AE976B121A6AE66003B7E93 /* Model */,
 				9AE976AF21A6AAE9003B7E93 /* WeatherMVPTests-Bridging-Header.h */,
@@ -393,10 +448,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE976AC21A6A52C003B7E93 /* City.swift in Sources */,
+				9ADF5BE221A6EE2F00D621E2 /* Closures.swift in Sources */,
 				9AE976BB21A6B404003B7E93 /* DataManager.swift in Sources */,
 				9AE976C221A6BBFC003B7E93 /* API_Manager.swift in Sources */,
 				9AE9768621A6A2CF003B7E93 /* AppDelegate.swift in Sources */,
 				9AE976B921A6B141003B7E93 /* RealmProvider.swift in Sources */,
+				9ADF5BDF21A6ECEA00D621E2 /* MainPresentor.swift in Sources */,
+				9ADF5BE721A6EEA000D621E2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +465,9 @@
 				9AE976BF21A6BBB5003B7E93 /* API_ManagerTests.swift in Sources */,
 				9AE976B421A6AE85003B7E93 /* DataManagerTests.swift in Sources */,
 				9AE976AE21A6A696003B7E93 /* JSON_City.swift in Sources */,
+				9ADF5BDC21A6E7F500D621E2 /* MainPresentorTests.swift in Sources */,
 				9AE976A921A6A45A003B7E93 /* CityTests.swift in Sources */,
+				9ADF5BE921A6FA5400D621E2 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
