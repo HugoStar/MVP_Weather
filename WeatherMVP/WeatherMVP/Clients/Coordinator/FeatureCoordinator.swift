@@ -20,8 +20,6 @@ class FeatureCoordinator: Coordinator {
   func start() {
     showMainScreen()
   }
-  
-  
 }
 
 extension FeatureCoordinator {
@@ -34,7 +32,11 @@ extension FeatureCoordinator {
 }
 
 extension FeatureCoordinator: MainPresentorDelegate {
-  func didEnterCity(_ city: City, andCallback: @escaping EmptyClocure) {
-    //FIXME: - Show DetailController
+  func didAddCity(with callBack: (City) -> Void) {
+    //FIXME: Show AddViewController
+  }
+  
+  func didEnterCity(_ city: City, andCallback: @escaping EmptyClosure) {
+    //FIXME: Show DetailController
   }
 }

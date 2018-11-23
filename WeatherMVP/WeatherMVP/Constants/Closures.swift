@@ -10,4 +10,5 @@ import Foundation
 
 //Closures
 
-typealias EmptyClocure = () -> Void
+typealias EmptyClosure = () -> Void
+typealias CityClosure = (_ city: City) -> Void

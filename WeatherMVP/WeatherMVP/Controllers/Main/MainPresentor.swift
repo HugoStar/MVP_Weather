@@ -9,7 +9,8 @@
 import Foundation
 
 protocol MainPresentorDelegate: class {
-  func didEnterCity(_ city: City, andCallback: @escaping EmptyClocure)
+  func didEnterCity(_ city: City, andCallback: @escaping EmptyClosure)
+  func didAddCity(with callBack: CityClosure)
 }
 
 protocol MainPresentorType {
