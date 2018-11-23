@@ -32,11 +32,9 @@ struct DataManager: DataManagerType {
   func loadCities() -> [City] {
     return Array(realm.objects(City.self))
   }
-  
   func deleteCity(_ city: City) {
     try! realm.write {
       realm.delete(city)
     }
   }
-
 }

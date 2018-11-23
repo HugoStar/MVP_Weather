@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D095272E8BFB1E494243CBD /* Pods_WeatherMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D992546F96A92F8F68841202 /* Pods_WeatherMVP.framework */; };
 		5DE596041A392CFA443BF023 /* Pods_WeatherMVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74233F7C432F2858B377693 /* Pods_WeatherMVPTests.framework */; };
+		9A6B59B021A7F4EE008805BB /* FeatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B59AF21A7F4EE008805BB /* FeatureFactory.swift */; };
+		9A6B59B321A7F519008805BB /* FeatureSceneFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B59B221A7F519008805BB /* FeatureSceneFactoryTests.swift */; };
+		9A6B59B521A7F72F008805BB /* FeatureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B59B421A7F72F008805BB /* FeatureCoordinator.swift */; };
+		9A6B59B721A7F745008805BB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B59B621A7F745008805BB /* Coordinator.swift */; };
+		9A6B59B921A7F7C3008805BB /* FeatureCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B59B821A7F7C3008805BB /* FeatureCoordinatorTests.swift */; };
 		9ADF5BDC21A6E7F500D621E2 /* MainPresentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BDB21A6E7F500D621E2 /* MainPresentorTests.swift */; };
 		9ADF5BDF21A6ECEA00D621E2 /* MainPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BDE21A6ECEA00D621E2 /* MainPresentor.swift */; };
 		9ADF5BE221A6EE2F00D621E2 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF5BE121A6EE2F00D621E2 /* Closures.swift */; };
@@ -42,6 +47,11 @@
 		13D5E9244825837DC71D8D65 /* Pods-WeatherMVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVPTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMVPTests/Pods-WeatherMVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		20E9420975751DAABD4E9B1E /* Pods-WeatherMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVP.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMVP/Pods-WeatherMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		3EFF09DDD96F4524585F786F /* Pods-WeatherMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMVP.release.xcconfig"; path = "Target Support Files/Pods-WeatherMVP/Pods-WeatherMVP.release.xcconfig"; sourceTree = "<group>"; };
+		9A6B59AF21A7F4EE008805BB /* FeatureFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFactory.swift; sourceTree = "<group>"; };
+		9A6B59B221A7F519008805BB /* FeatureSceneFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSceneFactoryTests.swift; sourceTree = "<group>"; };
+		9A6B59B421A7F72F008805BB /* FeatureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinator.swift; sourceTree = "<group>"; };
+		9A6B59B621A7F745008805BB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9A6B59B821A7F7C3008805BB /* FeatureCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatorTests.swift; sourceTree = "<group>"; };
 		9ADF5BDB21A6E7F500D621E2 /* MainPresentorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentorTests.swift; sourceTree = "<group>"; };
 		9ADF5BDE21A6ECEA00D621E2 /* MainPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentor.swift; sourceTree = "<group>"; };
 		9ADF5BE121A6EE2F00D621E2 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
@@ -107,6 +117,25 @@
 				F74233F7C432F2858B377693 /* Pods_WeatherMVPTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A6B59AE21A7F4D2008805BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9A6B59AF21A7F4EE008805BB /* FeatureFactory.swift */,
+				9A6B59B421A7F72F008805BB /* FeatureCoordinator.swift */,
+				9A6B59B621A7F745008805BB /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9A6B59B121A7F506008805BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9A6B59B221A7F519008805BB /* FeatureSceneFactoryTests.swift */,
+				9A6B59B821A7F7C3008805BB /* FeatureCoordinatorTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		9ADF5BD921A6E7D800D621E2 /* Controllers */ = {
@@ -235,6 +264,7 @@
 		9AE976B221A6AE6E003B7E93 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				9A6B59B121A7F506008805BB /* Coordinator */,
 				9AE976B321A6AE85003B7E93 /* DataManagerTests.swift */,
 				9AE976BE21A6BBB5003B7E93 /* API_ManagerTests.swift */,
 			);
@@ -244,6 +274,7 @@
 		9AE976B621A6B124003B7E93 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				9A6B59AE21A7F4D2008805BB /* Coordinator */,
 				9AE976C021A6BBE9003B7E93 /* API_Manager */,
 				9AE976B721A6B12A003B7E93 /* DataManager */,
 			);
@@ -448,9 +479,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE976AC21A6A52C003B7E93 /* City.swift in Sources */,
+				9A6B59B521A7F72F008805BB /* FeatureCoordinator.swift in Sources */,
+				9A6B59B021A7F4EE008805BB /* FeatureFactory.swift in Sources */,
 				9ADF5BE221A6EE2F00D621E2 /* Closures.swift in Sources */,
 				9AE976BB21A6B404003B7E93 /* DataManager.swift in Sources */,
 				9AE976C221A6BBFC003B7E93 /* API_Manager.swift in Sources */,
+				9A6B59B721A7F745008805BB /* Coordinator.swift in Sources */,
 				9AE9768621A6A2CF003B7E93 /* AppDelegate.swift in Sources */,
 				9AE976B921A6B141003B7E93 /* RealmProvider.swift in Sources */,
 				9ADF5BDF21A6ECEA00D621E2 /* MainPresentor.swift in Sources */,
@@ -463,7 +497,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE976BF21A6BBB5003B7E93 /* API_ManagerTests.swift in Sources */,
+				9A6B59B321A7F519008805BB /* FeatureSceneFactoryTests.swift in Sources */,
 				9AE976B421A6AE85003B7E93 /* DataManagerTests.swift in Sources */,
+				9A6B59B921A7F7C3008805BB /* FeatureCoordinatorTests.swift in Sources */,
 				9AE976AE21A6A696003B7E93 /* JSON_City.swift in Sources */,
 				9ADF5BDC21A6E7F500D621E2 /* MainPresentorTests.swift in Sources */,
 				9AE976A921A6A45A003B7E93 /* CityTests.swift in Sources */,

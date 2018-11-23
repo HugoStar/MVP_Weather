@@ -70,5 +70,6 @@ extension MainPresentorTests {
     func deleteCity(_ city: City) {
       mockArray = mockArray.filter { $0.name != city.name }
     }
+    
   }
 }

@@ -18,10 +18,12 @@ protocol MainPresentorType {
   func getCountCities() -> Int
   func getCityAtIndex(_ idnex: Int) -> City
   func deleteElementAtIndex(_ index: Int) -> City
+  
+  func showControllerForAddCity()
 }
 
 class MainPresentor: MainPresentorType {
-  
+
   weak var delegate: MainPresentorDelegate?
   let view: MainView
   let dataManager: DataManagerType
@@ -50,6 +52,11 @@ class MainPresentor: MainPresentorType {
     let city = cities.remove(at: index)
     dataManager.deleteCity(city)
     return city
+  }
+  
+  func showControllerForAddCity() {
+    //FIXME: - Realize method
+    print("show controller")
   }
   
   

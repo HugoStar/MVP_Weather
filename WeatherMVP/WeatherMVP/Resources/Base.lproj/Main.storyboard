@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" id="xUI-hU-f3N">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="t5N-KE-ibL">
                             <connections>
-                                <action selector="updateData:" destination="BYZ-38-t0r" id="K0t-xB-Mfq"/>
+                                <action selector="reloadData:" destination="BYZ-38-t0r" id="Ox3-Zs-gCn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="q4n-I5-OnN">

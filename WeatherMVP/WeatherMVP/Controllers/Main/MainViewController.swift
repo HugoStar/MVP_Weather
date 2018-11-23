@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
   //MARK: -
   //MARK: Outlets
   @IBOutlet weak var tableView: UITableView!
+  
 
   //MARK: -
   //MARK: Properties
@@ -36,13 +37,13 @@ class MainViewController: UIViewController {
 
   //MARK: -
   //MARK: ActionsAndChanges
-  
-  @IBAction func updateData(_ sender: UIBarButtonItem) {
-  }
-  
   @IBAction func addCity(_ sender: UIBarButtonItem) {
+    presentor.showControllerForAddCity()
   }
 
+  @IBAction func reloadData(_ sender: UIBarButtonItem) {
+    presentor.updateData()
+  }
 }
 
 
@@ -60,11 +61,12 @@ extension MainViewController: UITableViewDataSource {
     
     return cell
   }
-  
 }
 
 extension MainViewController: UITableViewDelegate {
   
 }
 
-extension MainView {}
+extension MainViewController: MainView {
+  
+}

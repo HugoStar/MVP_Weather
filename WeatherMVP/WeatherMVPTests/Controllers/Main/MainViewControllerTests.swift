@@ -72,6 +72,34 @@ class MainViewControllerTests: XCTestCase {
   func test_CellForRow_ReturnsItemCell() {
     XCTAssertNotNil(loadCellWithCity())
   }
+  
+  func test_CheckActionButtonReaload() {
+
+    XCTAssertEqual(mockPresentor.cities.count, 0)
+    
+    guard let reloadButton = mainViewController.navigationItem.leftBarButtonItem else { XCTFail("button reload is nil"); return }
+    guard let action = reloadButton.action else { XCTFail("button reload action is nil"); return }
+
+    mainViewController.performSelector(onMainThread: action,
+                                       with: reloadButton,
+                                       waitUntilDone: true)
+    
+    XCTAssertTrue(mockPresentor.dataInUpdate)
+  }
+  
+  func test_CheckActionButtonAddCity() {
+    
+    XCTAssertEqual(mockPresentor.cities.count, 0)
+    
+    guard let addButton = mainViewController.navigationItem.rightBarButtonItem else { XCTFail("button reload is nil"); return }
+    guard let action = addButton.action else { XCTFail("button reload action is nil"); return }
+    
+    mainViewController.performSelector(onMainThread: action,
+                                       with: addButton,
+                                       waitUntilDone: true)
+    
+    XCTAssertTrue(mockPresentor.addCityIsShow)
+  }
 
   
   func test_CheckCityInCell() {
@@ -98,14 +126,23 @@ class MainViewControllerTests: XCTestCase {
 
 
 extension MainViewControllerTests {
-  
+
   class MockMainPresentor: MainPresentorType {
+
     var cities: [City] = []
-    
-    func updateData() {}
+    var dataInUpdate: Bool = false
+    var addCityIsShow: Bool = false
+
+    func updateData() {
+      dataInUpdate = true
+    }
     
     func getCountCities() -> Int {
       return cities.count
+    }
+    
+    func showControllerForAddCity() {
+      addCityIsShow = true
     }
     
     func getCityAtIndex(_ idnex: Int) -> City {
@@ -115,7 +152,5 @@ extension MainViewControllerTests {
     func deleteElementAtIndex(_ index: Int) -> City {
       return cities.remove(at: index)
     }
-
   }
-  
 }
