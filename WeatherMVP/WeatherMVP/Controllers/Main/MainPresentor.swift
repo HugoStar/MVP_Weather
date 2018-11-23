@@ -12,7 +12,15 @@ protocol MainPresentorDelegate: class {
   func didEnterCity(_ city: City, andCallback: @escaping EmptyClocure)
 }
 
-class MainPresentor {
+protocol MainPresentorType {
+  
+  func updateData()
+  func getCountCities() -> Int
+  func getCityAtIndex(_ idnex: Int) -> City
+  func deleteElementAtIndex(_ index: Int) -> City
+}
+
+class MainPresentor: MainPresentorType {
   
   weak var delegate: MainPresentorDelegate?
   let view: MainView
