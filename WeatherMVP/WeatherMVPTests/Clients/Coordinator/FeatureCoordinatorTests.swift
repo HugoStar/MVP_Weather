@@ -10,13 +10,25 @@ import XCTest
 @testable import WeatherMVP
 
 class FeatureCoordinatorTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+  var testNavigationController: UINavigationController!
+  var featureCoordinator: FeatureCoordinator!
+  
+  override func setUp() {
+    testNavigationController = UINavigationController()
+    featureCoordinator = FeatureCoordinator(navigationController: testNavigationController)
+  }
+  
+  override func tearDown() {}
+  
+  
+  func test_ShowMainScreen() {
+    featureCoordinator.showMainScreen()
+    XCTAssertEqual(testNavigationController.viewControllers.count, 1)
+  }
+  
+  func test_ActivateMehtodStart() {
+    featureCoordinator.start()
+    XCTAssertTrue(testNavigationController.viewControllers.first! is MainViewController)
+  }
+  
 }
