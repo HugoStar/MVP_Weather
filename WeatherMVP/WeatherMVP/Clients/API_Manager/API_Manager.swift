@@ -16,8 +16,14 @@ enum NETError: Error {
   case runtimeError(String)
 }
 
+protocol API_ManagerType {
+  
+  init(with netClient: NetClientType)
+  
+  func addCityWithName(_ name: String, callBack: @escaping NETResponce)
+}
 
-struct API_Manager {
+struct API_Manager: API_ManagerType {
   
   private let api_key = "0f49f454b8ae2376d58805cc4e9d5a10"
   private let mainURL = "http://api.openweathermap.org/data/2.5/weather"

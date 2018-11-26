@@ -53,7 +53,7 @@ extension MainPresentorTests {
     
   }
   
-  class MockDataManager: DataManagerType {
+  private class MockDataManager: DataManagerType {
     private var mockArray: [City] = [
       City(name: "Sochi", temperature: 20.0, humidity: 70, icon: "x"),
       City(name: "London", temperature: 23.6, humidity: 50, icon: "sx"),

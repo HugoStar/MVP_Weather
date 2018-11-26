@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -77,7 +77,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.75" y="133.09859154929578"/>
+            <point key="canvasLocation" x="1131" y="136"/>
+        </scene>
+        <!--Add City View Controller-->
+        <scene sceneID="O0q-Vv-ePx">
+            <objects>
+                <viewController storyboardIdentifier="AddCityViewController" id="NUT-tq-4DE" customClass="AddCityViewController" customModule="WeatherMVP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2W-On-6Pd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAm-Wb-fmJ">
+                                <rect key="frame" x="16" y="100" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="kqB-Jy-KWm">
+                                <rect key="frame" x="70" y="229" width="180" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b4-VD-8Bp">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                        <state key="normal" title="AddCity"/>
+                                        <connections>
+                                            <action selector="addNameTap:" destination="NUT-tq-4DE" eventType="touchUpInside" id="801-05-870"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXi-XD-RRf">
+                                        <rect key="frame" x="0.0" y="80" width="180" height="30"/>
+                                        <state key="normal" title="Calcel"/>
+                                        <connections>
+                                            <action selector="cancelTap:" destination="NUT-tq-4DE" eventType="touchUpInside" id="zvN-aj-ton"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ilQ-mN-Kju" firstAttribute="trailing" secondItem="XAm-Wb-fmJ" secondAttribute="trailing" constant="16" id="1Rm-Wl-uTY"/>
+                            <constraint firstItem="kqB-Jy-KWm" firstAttribute="leading" secondItem="ilQ-mN-Kju" secondAttribute="leading" constant="70" id="38P-9O-Qb1"/>
+                            <constraint firstItem="XAm-Wb-fmJ" firstAttribute="leading" secondItem="ilQ-mN-Kju" secondAttribute="leading" constant="16" id="72N-RE-m8B"/>
+                            <constraint firstItem="XAm-Wb-fmJ" firstAttribute="top" secondItem="ilQ-mN-Kju" secondAttribute="top" constant="80" id="8LY-Ol-z0I"/>
+                            <constraint firstItem="ilQ-mN-Kju" firstAttribute="trailing" secondItem="kqB-Jy-KWm" secondAttribute="trailing" constant="70" id="YIX-BA-9BH"/>
+                            <constraint firstItem="kqB-Jy-KWm" firstAttribute="centerY" secondItem="g2W-On-6Pd" secondAttribute="centerY" id="ee2-8q-QqF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ilQ-mN-Kju"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputFieldName" destination="XAm-Wb-fmJ" id="2d1-FH-cit"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvw-vg-W6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-258"/>
         </scene>
     </scenes>
 </document>
