@@ -32,17 +32,28 @@ class AddCityViewControllerTests: XCTestCase {
     XCTAssertNotNil(addCityViewController.inputFieldName)
   }
   
+  func test_ActionButtonAddCity() {
+    guard let button = addCityViewController.buttonAddCity else { XCTFail(); return }
+    button.sendActions(for: .touchUpInside)
+    XCTAssertTrue(mockPresentor.cityIsAdd)
+  }
+
+  
   
 }
 
 extension AddCityViewControllerTests {
-  
+
   class MockAddCityPresentor: AddCityPresentorType {
-    var cities: [City] = []
-    
+    var isHideControlle = false
+    var cityIsAdd = false
+
     func addCityWithName (_ cityName: String) {
-      let city = City(name: "Sochi", temperature: 20, humidity: 70, icon: "x")
-      cities.append(city)
+      cityIsAdd = true
+    }
+    
+    func actionForCancelButton() {
+      isHideControlle = true
     }
   }
 }

@@ -17,6 +17,9 @@ class AddCityViewController: UIViewController {
   //MARK: -
   //MARK: Outlets
   @IBOutlet weak var inputFieldName: UITextField!
+  @IBOutlet weak var buttonAddCity: UIButton!
+  @IBOutlet weak var buttonCancel: UIButton!
+  
   
 
   //MARK: -
@@ -33,6 +36,7 @@ class AddCityViewController: UIViewController {
   //MARK: -
   //MARK: ActionsAndChanges
   @IBAction func addNameTap(_ sender: Any) {
+    presentor.addCityWithName(inputFieldName.text!)
   }
   
   @IBAction func cancelTap(_ sender: Any) {

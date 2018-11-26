@@ -125,6 +125,8 @@
                         <viewLayoutGuide key="safeArea" id="ilQ-mN-Kju"/>
                     </view>
                     <connections>
+                        <outlet property="buttonAddCity" destination="1b4-VD-8Bp" id="HIg-s0-rV9"/>
+                        <outlet property="buttonCancel" destination="lXi-XD-RRf" id="UG8-AA-lPw"/>
                         <outlet property="inputFieldName" destination="XAm-Wb-fmJ" id="2d1-FH-cit"/>
                     </connections>
                 </viewController>
