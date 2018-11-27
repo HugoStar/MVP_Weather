@@ -29,4 +29,12 @@ struct FeatureSceneFactory {
     viewController.presentor = presentor
     return viewController
   }
+  
+  static func makeDetailViewController(withCity city: City) -> DetailViewController {
+    let viewController = UIStoryboard(name: "Main", bundle: nil)
+      .instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    let presentor = DetailViewPresentor(city: city, view: viewController)
+    viewController.presentor = presentor
+    return viewController
+  }
 }

@@ -71,7 +71,9 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    presentor.showDetailViewController(cityIndex: indexPath.row)
+  }  
 }
 
 extension MainViewController: MainView {

@@ -34,6 +34,11 @@ extension FeatureCoordinator {
     navigationController.pushViewController(scene, animated: true)
   }
   
+  func showDetailScreen(withCity city: City) {
+    let scene = FeatureSceneFactory.makeDetailViewController(withCity: city)
+    navigationController.pushViewController(scene, animated: true)
+  }
+  
   func backToViewController() {
     navigationController.popViewController(animated: true)
   }
@@ -46,8 +51,8 @@ extension FeatureCoordinator: MainPresentorDelegate {
     showAddScreen(with: callBack, andDelegate: self)
   }
   
-  func didEnterCity(_ city: City, andCallback: @escaping EmptyClosure) {
-    //FIXME: Show DetailController
+  func didEnterCity(_ city: City) {
+    showDetailScreen(withCity: city)
   }
 }
 

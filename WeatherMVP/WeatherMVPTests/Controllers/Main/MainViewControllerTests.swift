@@ -128,6 +128,13 @@ class MainViewControllerTests: XCTestCase {
 extension MainViewControllerTests {
 
   class MockMainPresentor: MainPresentorType {
+    
+    
+    
+    func showDetailViewController(cityIndex index: Int) {
+      
+    }
+    
 
     var cities: [City] = []
     var dataInUpdate: Bool = false

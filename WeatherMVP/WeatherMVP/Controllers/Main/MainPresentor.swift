@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainPresentorDelegate: class {
-  func didEnterCity(_ city: City, andCallback: @escaping EmptyClosure)
+  func didEnterCity(_ city: City)
   func didAddCity(with callBack: EmptyClosure?)
 }
 
@@ -21,6 +21,7 @@ protocol MainPresentorType {
   func deleteElementAtIndex(_ index: Int) -> City
   
   func showControllerForAddCity()
+  func showDetailViewController(cityIndex index: Int)
 }
 
 class MainPresentor: MainPresentorType {
@@ -61,5 +62,9 @@ class MainPresentor: MainPresentorType {
       self?.updateData()
       self?.view.reloadTableView()
     }
+  }
+  
+  func showDetailViewController(cityIndex index: Int) {
+    delegate?.didEnterCity(cities[index])
   }
 }

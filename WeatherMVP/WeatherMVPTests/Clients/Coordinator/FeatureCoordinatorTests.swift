@@ -36,6 +36,12 @@ class FeatureCoordinatorTests: XCTestCase {
     XCTAssertTrue(testNavigationController.backToPreviousViewController)
   }
   
+  func test_ShowDetailScreen() {
+    let city = City()
+    featureCoordinator.showDetailScreen(withCity: city)
+    XCTAssertTrue(testNavigationController.mockViewControllers.first is DetailViewController)
+  }
+  
 
   
   func test_ActivateMehtodStart() {

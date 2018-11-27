@@ -29,4 +29,10 @@ class FeatureSceneFactoryTests: XCTestCase {
     XCTAssertNotNil(viewController)
     XCTAssertNotNil(viewController.presentor)
   }
+  
+  func test_MakeDetailViewController() {
+    let viewController = factory.makeDetailViewController(withCity: City())
+    XCTAssertNotNil(viewController)
+    XCTAssertNotNil(viewController.presentor)
+  }
 }
