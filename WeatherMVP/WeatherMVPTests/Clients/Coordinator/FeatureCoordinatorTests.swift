@@ -26,6 +26,16 @@ class FeatureCoordinatorTests: XCTestCase {
     XCTAssertEqual(testNavigationController.viewControllers.count, 1)
   }
   
+  func test_ShowAddScreen() {
+    featureCoordinator.showAddScreen(with: nil, andDelegate: nil)
+    XCTAssertTrue(testNavigationController.mockViewControllers.first is AddCityViewController)
+  }
+  
+  func test_backToViewController() {
+    featureCoordinator.backToPreviousViewController()
+    XCTAssertTrue(testNavigationController.backToPreviousViewController)
+  }
+  
 
   
   func test_ActivateMehtodStart() {
@@ -38,6 +48,14 @@ class FeatureCoordinatorTests: XCTestCase {
 
 extension FeatureCoordinatorTests {
   class MockViewController: UINavigationController {
+    
+    var backToPreviousViewController = false
+    
+    override func popViewController(animated: Bool) -> UIViewController? {
+      backToPreviousViewController = true
+      return nil
+    }
+
     var mockViewControllers: [UIViewController] = []
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
       mockViewControllers.append(viewController)

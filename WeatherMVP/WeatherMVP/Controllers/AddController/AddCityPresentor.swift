@@ -40,8 +40,6 @@ class AddCityPresentor: AddCityPresentorType {
       if let result = result as? [String : Any], let city = try? City(unboxer: Unboxer(dictionary: result)) {
         self?.dataManager.addCity(city)
         callback()
-      } else {
-        print(error ?? "nil")
       }
     }
   }

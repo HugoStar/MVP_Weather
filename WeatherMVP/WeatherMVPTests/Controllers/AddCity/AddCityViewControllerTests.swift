@@ -32,6 +32,11 @@ class AddCityViewControllerTests: XCTestCase {
     XCTAssertNotNil(addCityViewController.inputFieldName)
   }
   
+  func test_BackToPreviousController() {
+    mockPresentor.backPrevious()
+    XCTAssertTrue(mockPresentor.backToPreviousViewController)
+  }
+  
   func test_ActionButtonAddCity() {
     guard let button = addCityViewController.buttonAddCity else { XCTFail(); return }
     button.sendActions(for: .touchUpInside)
@@ -51,21 +56,21 @@ class AddCityViewControllerTests: XCTestCase {
 extension AddCityViewControllerTests {
 
   class MockAddCityPresentor: AddCityPresentorType {
-    func addCityWithName(_ cityName: String, callback: @escaping EmptyClosure) {
-      
-    }
+
     
-    func backPrevious() {
-      
-    }
+    
     
     var isHideControlle = false
     var cityIsAdd = false
-
-    func addCityWithName (_ cityName: String) {
+    var backToPreviousViewController = false
+    
+    func addCityWithName(_ cityName: String, callback: @escaping EmptyClosure) {
       cityIsAdd = true
     }
     
+    func backPrevious() {
+      backToPreviousViewController = true
+    }
     func actionForCancelButton() {
       isHideControlle = true
     }
