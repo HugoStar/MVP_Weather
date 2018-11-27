@@ -22,12 +22,14 @@ class AddCityPresentor: AddCityPresentorType {
   let view: AddCityView
   let dataManager: DataManagerType
   let apiManager: API_ManagerType
+  let callback: EmptyClosure?
   
-  init(dataManager: DataManagerType, apiManager: API_ManagerType, view: AddCityView, delegate: AddCityPresentorDelegate?) {
+  init(dataManager: DataManagerType, apiManager: API_ManagerType, view: AddCityView, delegate: AddCityPresentorDelegate?, callback: EmptyClosure? = nil) {
     self.dataManager = dataManager
     self.apiManager = apiManager
     self.view = view
     self.delegate = delegate
+    self.callback = callback
   }
   
   func addCityWithName (_ cityName: String) {
@@ -39,5 +41,8 @@ class AddCityPresentor: AddCityPresentorType {
       }
     }
   }
-  
+  func runCallback() {
+    guard let callBack = callback else { return }
+    callBack()
+  }
 }

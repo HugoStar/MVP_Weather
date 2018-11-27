@@ -20,12 +20,12 @@ struct FeatureSceneFactory {
     return viewController
   }
   
-  static func makeAddCityController(delegate: AddCityPresentorDelegate? = nil) -> AddCityViewController {
+  static func makeAddCityController(delegate: AddCityPresentorDelegate? = nil, callback: EmptyClosure? = nil) -> AddCityViewController {
     let viewController = UIStoryboard(name: "Main", bundle: nil)
       .instantiateViewController(withIdentifier: "AddCityViewController") as! AddCityViewController
     let dataManager = DataManager()
     let apiManager = API_Manager(with: NetClient())
-    let presentor = AddCityPresentor(dataManager: dataManager, apiManager: apiManager, view: viewController, delegate: delegate)
+    let presentor = AddCityPresentor(dataManager: dataManager, apiManager: apiManager, view: viewController, delegate: delegate, callback: callback)
     viewController.presentor = presentor
     return viewController
   }

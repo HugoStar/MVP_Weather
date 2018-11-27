@@ -29,7 +29,7 @@ extension FeatureCoordinator {
     navigationController.viewControllers = [scene]
   }
   
-  func showAddScreen() {
+  func showAddScreen(with callBack: EmptyClosure?) {
     let scene = FeatureSceneFactory.makeAddCityController()
     navigationController.pushViewController(scene, animated: true)
   }
@@ -37,7 +37,7 @@ extension FeatureCoordinator {
 }
 
 extension FeatureCoordinator: MainPresentorDelegate {
-  func didAddCity(with callBack: (City) -> Void) {
+  func didAddCity(with callBack: EmptyClosure) {
     //FIXME: Show AddViewController
   }
   
