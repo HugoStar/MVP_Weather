@@ -12,13 +12,14 @@ import XCTest
 class MainPresentorTests: XCTestCase {
   
   var mainPresentor: MainPresentor!
-  
+  var mockDelegate: MockDelegatePresentor!
   
   override func setUp() {
     let mockMainView = MockMainView()
     let mockDataManager = MockDataManager()
+    mockDelegate = MockDelegatePresentor()
     
-    mainPresentor = MainPresentor(dataManager: mockDataManager, view: mockMainView, delegate: nil)
+    mainPresentor = MainPresentor(dataManager: mockDataManager, view: mockMainView, delegate: mockDelegate)
     mainPresentor.updateData()
   }
   
@@ -44,18 +45,42 @@ class MainPresentorTests: XCTestCase {
     XCTAssertEqual(dataCities[1].name, "Peru")
   }
   
+  func test_ShowConteollerForAddCity() {
+    mainPresentor.showControllerForAddCity()
+    XCTAssertTrue(mockDelegate.runAddCity)
+  }
+  
+  func test_ShowDetailViewController() {
+    mainPresentor.showDetailViewController(cityIndex: 0)
+    XCTAssertTrue(mockDelegate.runDidEnterCity)
+  }
+  
 }
 
 
 extension MainPresentorTests {
   
   class MockMainView: MainView {
-    
     var tableIsReoad = false
-    
     func reloadTableView() {
       tableIsReoad = true
     }
+  }
+  
+  class MockDelegatePresentor: MainPresentorDelegate {
+    
+    var runDidEnterCity = false
+    var runAddCity = false
+    
+    func didEnterCity(_ city: City) {
+      runDidEnterCity = true
+    }
+    
+    func didAddCity(with callBack: EmptyClosure?) {
+      runAddCity = true
+    }
+    
+    
   }
   
   private class MockDataManager: DataManagerType {

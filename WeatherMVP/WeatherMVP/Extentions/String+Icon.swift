@@ -41,7 +41,7 @@ public func iconNameToChar(icon: String) -> String {
   }
 }
 
-fileprivate func imageFromText(text: NSString, font: UIFont) -> UIImage {
+func imageFromText(text: NSString, font: UIFont) -> UIImage {
   
   let size = text.size(withAttributes: [NSAttributedString.Key.font: font])
   

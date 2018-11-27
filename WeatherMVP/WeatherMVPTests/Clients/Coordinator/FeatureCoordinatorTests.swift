@@ -49,6 +49,24 @@ class FeatureCoordinatorTests: XCTestCase {
     XCTAssertTrue(testNavigationController.viewControllers.first! is MainViewController)
   }
   
+  
+  func test_BackToViewController() {
+    featureCoordinator.backToViewController()
+    XCTAssertTrue(testNavigationController.backToPreviousViewController)
+  }
+  
+  func test_DidAddCity() {
+    featureCoordinator.didAddCity(with: nil)
+    XCTAssertTrue(testNavigationController.mockViewControllers.first is AddCityViewController)
+  }
+  
+  func test_DidEnterCity() {
+    let city = City(name: "Sochi", temperature: 20, humidity: 70, icon: "x")
+    featureCoordinator.didEnterCity(city)
+    XCTAssertTrue(testNavigationController.mockViewControllers.first is DetailViewController)
+  }
+  
+  
 }
 
 
