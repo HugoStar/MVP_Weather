@@ -37,6 +37,12 @@ class AddCityViewControllerTests: XCTestCase {
     button.sendActions(for: .touchUpInside)
     XCTAssertTrue(mockPresentor.cityIsAdd)
   }
+  
+  func test_HideKeyBoard() {
+    let shouldReturn = addCityViewController.textFieldShouldReturn(addCityViewController.inputFieldName)
+    XCTAssertTrue(shouldReturn)
+  }
+  
 
   
   

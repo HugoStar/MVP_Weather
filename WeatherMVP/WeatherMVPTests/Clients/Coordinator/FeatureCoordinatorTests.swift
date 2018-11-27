@@ -26,6 +26,15 @@ class FeatureCoordinatorTests: XCTestCase {
     XCTAssertEqual(testNavigationController.viewControllers.count, 1)
   }
   
+  func test_ShowAddCityScreen() {
+    featureCoordinator.showMainScreen()
+    XCTAssertEqual(testNavigationController.viewControllers.count, 1)
+    
+    featureCoordinator.showAddScreen()
+     guard let addCityViewController = sut.presentedViewController as? InputViewController else { XCTFail(); return nil }
+    
+  }
+  
   func test_ActivateMehtodStart() {
     featureCoordinator.start()
     XCTAssertTrue(testNavigationController.viewControllers.first! is MainViewController)

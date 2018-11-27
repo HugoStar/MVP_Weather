@@ -29,6 +29,11 @@ extension FeatureCoordinator {
     navigationController.viewControllers = [scene]
   }
   
+  func showAddScreen() {
+    let scene = FeatureSceneFactory.makeAddCityController()
+    navigationController.pushViewController(scene, animated: true)
+  }
+  
 }
 
 extension FeatureCoordinator: MainPresentorDelegate {

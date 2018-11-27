@@ -40,6 +40,7 @@ class AddCityViewController: UIViewController {
   }
   
   @IBAction func cancelTap(_ sender: Any) {
+    //FIXME: добавить реализацию
   }
   
   

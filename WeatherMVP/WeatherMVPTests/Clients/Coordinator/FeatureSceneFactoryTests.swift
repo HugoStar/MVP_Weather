@@ -21,5 +21,12 @@ class FeatureSceneFactoryTests: XCTestCase {
   func test_MakeMainViewController() {
     let viewController = factory.makeMainController(delegate: nil)
     XCTAssertNotNil(viewController)
+    XCTAssertNotNil(viewController.presentor)
+  }
+  
+  func test_MakeAddCityViewController() {
+    let viewController = factory.makeAddCityController()
+    XCTAssertNotNil(viewController)
+    XCTAssertNotNil(viewController.presentor)
   }
 }
