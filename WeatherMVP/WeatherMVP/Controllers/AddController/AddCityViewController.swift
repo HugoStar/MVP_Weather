@@ -36,11 +36,13 @@ class AddCityViewController: UIViewController {
   //MARK: -
   //MARK: ActionsAndChanges
   @IBAction func addNameTap(_ sender: Any) {
-    presentor.addCityWithName(inputFieldName.text!)
+    presentor.addCityWithName(inputFieldName.text!) { [weak self] in
+      self?.presentor.backPrevious()
+    }
   }
   
   @IBAction func cancelTap(_ sender: Any) {
-    //FIXME: добавить реализацию
+    presentor.backPrevious()
   }
   
   

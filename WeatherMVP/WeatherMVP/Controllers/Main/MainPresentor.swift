@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainPresentorDelegate: class {
   func didEnterCity(_ city: City, andCallback: @escaping EmptyClosure)
-  func didAddCity(with callBack: EmptyClosure)
+  func didAddCity(with callBack: EmptyClosure?)
 }
 
 protocol MainPresentorType {
@@ -37,6 +37,7 @@ class MainPresentor: MainPresentorType {
   }
   
   func updateData() {
+    print(dataManager.loadCities())
     cities = dataManager.loadCities()
   }
   
@@ -56,9 +57,9 @@ class MainPresentor: MainPresentorType {
   }
   
   func showControllerForAddCity() {
-    //FIXME: - Realize method
-    print("show controller")
+    delegate?.didAddCity { [weak self] in
+      self?.updateData()
+      self?.view.reloadTableView()
+    }
   }
-  
-  
 }

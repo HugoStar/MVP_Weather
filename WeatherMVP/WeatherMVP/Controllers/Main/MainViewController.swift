@@ -10,7 +10,7 @@ import UIKit
 
 protocol MainView {
   
-  
+  func reloadTableView()
   
 }
 
@@ -32,7 +32,13 @@ class MainViewController: UIViewController {
     
     tableView.delegate = self
     tableView.dataSource = self
+    self.navigationItem.hidesBackButton = true
     
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    presentor.updateData()
   }
 
   //MARK: -
@@ -43,6 +49,7 @@ class MainViewController: UIViewController {
 
   @IBAction func reloadData(_ sender: UIBarButtonItem) {
     presentor.updateData()
+    tableView.reloadData()
   }
 }
 
@@ -68,5 +75,7 @@ extension MainViewController: UITableViewDelegate {
 }
 
 extension MainViewController: MainView {
-  
+  func reloadTableView() {
+    tableView.reloadData()
+  }
 }

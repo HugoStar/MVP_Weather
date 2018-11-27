@@ -26,7 +26,7 @@ class AddCityPresentorTests: XCTestCase {
   override func tearDown() {}
   
   func test_AddCityWithName() {
-    addCityPresentor.addCityWithName("London")
+    addCityPresentor.addCityWithName("London") {}
     let cities = addCityPresentor.dataManager.loadCities()
     XCTAssertEqual(cities.count, 1)
     XCTAssertEqual(cities[0].name, "London")

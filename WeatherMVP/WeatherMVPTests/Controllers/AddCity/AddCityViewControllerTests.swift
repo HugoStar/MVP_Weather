@@ -51,6 +51,14 @@ class AddCityViewControllerTests: XCTestCase {
 extension AddCityViewControllerTests {
 
   class MockAddCityPresentor: AddCityPresentorType {
+    func addCityWithName(_ cityName: String, callback: @escaping EmptyClosure) {
+      
+    }
+    
+    func backPrevious() {
+      
+    }
+    
     var isHideControlle = false
     var cityIsAdd = false
 

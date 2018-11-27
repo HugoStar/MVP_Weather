@@ -9,11 +9,14 @@
 import Foundation
 import Unbox
 
-protocol AddCityPresentorDelegate: class {}
+protocol AddCityPresentorDelegate: class {
+  func backToPreviousViewController()
+}
 
 
 protocol AddCityPresentorType {
-  func addCityWithName (_ cityName: String)
+  func addCityWithName (_ cityName: String, callback: @escaping EmptyClosure)
+  func backPrevious()
 }
 
 class AddCityPresentor: AddCityPresentorType {
@@ -32,16 +35,19 @@ class AddCityPresentor: AddCityPresentorType {
     self.callback = callback
   }
   
-  func addCityWithName (_ cityName: String) {
+  func addCityWithName (_ cityName: String, callback: @escaping EmptyClosure) {
     apiManager.addCityWithName(cityName) { [weak self] result, error in
       if let result = result as? [String : Any], let city = try? City(unboxer: Unboxer(dictionary: result)) {
         self?.dataManager.addCity(city)
+        callback()
       } else {
         print(error ?? "nil")
       }
     }
   }
-  func runCallback() {
+  
+  func backPrevious() {
+    delegate?.backToPreviousViewController()
     guard let callBack = callback else { return }
     callBack()
   }

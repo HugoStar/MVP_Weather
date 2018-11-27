@@ -51,6 +51,11 @@ extension MainPresentorTests {
   
   class MockMainView: MainView {
     
+    var tableIsReoad = false
+    
+    func reloadTableView() {
+      tableIsReoad = true
+    }
   }
   
   private class MockDataManager: DataManagerType {
